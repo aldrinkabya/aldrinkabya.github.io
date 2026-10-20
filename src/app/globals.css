@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* next-themes sets class="dark" on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Every colour on the page comes from here.
+   All text pairs meet WCAG AA in both themes. */
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --surface-2: #f3efe8;
+  --fg: #1c1b19;
+  --muted: #5f5a52;
+  --subtle: #716c64;
+  --border: #e6e0d6;
+  --accent: #1b5c8a;
+  --accent-soft: #e8f0f6;
+  --accent-ring: #1b5c8a;
+  --ok: #17663f;
+  --ok-soft: #e3f3ea;
+  --ok-dot: #22a565;
+  --shadow: 0 1px 2px rgb(28 27 25 / 0.04), 0 8px 24px -12px rgb(28 27 25 / 0.12);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #111214;
+  --surface: #18191c;
+  --surface-2: #1f2024;
+  --fg: #ebe8e2;
+  --muted: #a19c93;
+  --subtle: #85817a;
+  --border: #2b2d32;
+  --accent: #82bfe8;
+  --accent-soft: #16283a;
+  --accent-ring: #82bfe8;
+  --ok: #86d9ab;
+  --ok-soft: #13281d;
+  --ok-dot: #3ccf86;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-ok-dot: var(--ok-dot);
+  --shadow-card: var(--shadow);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    -webkit-text-size-adjust: 100%;
+    /* Anchored sections clear the sticky nav. */
+    scroll-padding-top: 4.5rem;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  /* Inline prose links. */
+  .link {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 150ms;
+  }
+  .link:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  /* <details> blocks animate open where the browser can (progressive). */
+  details.disclosure::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size 250ms ease,
+      content-visibility 250ms allow-discrete;
+  }
+  details.disclosure[open]::details-content {
+    block-size: auto;
+  }
+  details.disclosure > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  details.disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+  details.disclosure[open] .disclosure-chevron {
+    transform: rotate(90deg);
+  }
+}
+
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* Scroll reveals: hidden only on screen, with JS (html.js, set by the inline
+   script in layout.tsx) and motion welcome. Otherwise content is simply there. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal] {
+    transition:
+      opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  html.js [data-reveal=""] {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  ::details-content {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* Print: everything visible, no sticky chrome. */
+@media print {
+  header,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Theme switch cross-fade (View Transitions API, where supported). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+}

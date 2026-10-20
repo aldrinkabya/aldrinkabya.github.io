@@ -1,0 +1,98 @@
+import type { Publication } from "./types";
+
+// Author lists and titles follow the published versions.
+
+export const publications: Publication[] = [
+  {
+    id: "insci-2026",
+    title: "Training-Free Layer Selection for Partial Fine-Tuning of Language Models",
+    authors: [
+      { name: "Aldrin Kabya Biswas", me: true },
+      { name: "Md Fahim" },
+      { name: "Md Tahmid Hasan Fuad" },
+      { name: "Akm Moshiur Rahman Mazumder" },
+      { name: "Amin Ahsan Ali" },
+      { name: "AKM Mahbubur Rahman" },
+    ],
+    venue: "Information Sciences",
+    venueShort: "Information Sciences",
+    highlight: "Q1",
+    year: 2026,
+    status: "published",
+    doi: "10.1016/j.ins.2026.123204",
+    thumbnail: "/images/papers/layer-selection-insci.webp",
+    thumbnailAlt:
+      "Heatmap of inter-layer cosine similarity for GPT-2 on the E2E NLG generation task, from the paper's Figure 3.",
+    bibtex: `@article{biswas2026trainingfree,
+  title     = {Training-Free Layer Selection for Partial Fine-Tuning of Language Models},
+  author    = {Biswas, Aldrin Kabya and Fahim, Md and Fuad, Md Tahmid Hasan and Mazumder, Akm Moshiur Rahman and Ali, Amin Ahsan and Rahman, AKM Mahbubur},
+  journal   = {Information Sciences},
+  volume    = {740},
+  pages     = {123204},
+  year      = {2026},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.ins.2026.123204}
+}`,
+  },
+  {
+    id: "prism-lrec-2026",
+    title:
+      "PRiSM: Partial Ranking via Inter-layer Semantic Measurement for Efficient Fine-tuning of Language Models",
+    authors: [
+      { name: "Aldrin Kabya Biswas", me: true },
+      { name: "Md Fahim" },
+      { name: "Md. Ashraful Amin" },
+      { name: "Amin Ahsan Ali" },
+      { name: "AKM Mahbubur Rahman" },
+    ],
+    venue: "Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)",
+    venueShort: "LREC 2026",
+    year: 2026,
+    status: "published",
+    doi: "10.63317/3eyz8rr5qun6",
+    thumbnail: "/images/papers/prism-lrec.webp",
+    thumbnailAlt:
+      "PRiSM overview: a selection stage scores each layer of a frozen model, then a fine-tuning stage trains only the selected layers.",
+    bibtex: `@inproceedings{biswas2026prism,
+  title     = {{PRiSM}: Partial Ranking via Inter-layer Semantic Measurement for Efficient Fine-tuning of Language Models},
+  author    = {Biswas, Aldrin Kabya and Fahim, Md and Amin, Md. Ashraful and Ali, Amin Ahsan and Rahman, AKM Mahbubur},
+  booktitle = {Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)},
+  pages     = {10313--10323},
+  year      = {2026},
+  address   = {Palma de Mallorca, Spain},
+  publisher = {ELRA Language Resources Association},
+  doi       = {10.63317/3eyz8rr5qun6}
+}`,
+  },
+  {
+    id: "bias-steering-quant",
+    title:
+      "Disentangling Debiasing from Abstention in Bias-Steering Transfer to Quantized Language Models",
+    authors: [
+      { name: "Aldrin Kabya Biswas", me: true },
+      { name: "Md. Zakir Hossan" },
+      { name: "AKM Mahbubur Rahman" },
+    ],
+    venue: "Under review at ACIIDS 2027",
+    venueShort: "Under review · ACIIDS 2027",
+    year: 2026,
+    status: "under-review",
+  },
+  {
+    id: "mllm-lulc",
+    title:
+      "MLLM-Guided Vision-Language Alignment for Land Use Land Cover Segmentation in Remote Sensing",
+    authors: [
+      { name: "Armun Alam" },
+      { name: "Farhan Mahmud" },
+      { name: "Aldrin Kabya Biswas", me: true },
+      { name: "AKM Mahbubur Rahman" },
+    ],
+    venue: "Under review",
+    venueShort: "Under review",
+    year: 2026,
+    status: "under-review",
+  },
+];
+
+export const doiUrl = (doi: string) => `https://doi.org/${doi}`;
