@@ -75,11 +75,13 @@ function PublishedCard({ p }: { p: Publication }) {
 }
 
 function UnderReviewItem({ p }: { p: Publication }) {
+  const links = linksFor(p);
   return (
     <li id={p.id} className="scroll-mt-20 border-l-2 border-border py-1 pl-4">
       <h4 className="font-medium leading-snug">{p.title}</h4>
       <Authors authors={p.authors} />
       <p className="mt-1 text-sm text-subtle">{p.venue}</p>
+      {links.length > 0 && <PaperLinks links={links} />}
     </li>
   );
 }

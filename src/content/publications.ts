@@ -71,12 +71,14 @@ export const publications: Publication[] = [
     authors: [
       { name: "Aldrin Kabya Biswas", me: true },
       { name: "Md. Zakir Hossan" },
+      { name: "Md. Ashraful Amin" },
       { name: "AKM Mahbubur Rahman" },
     ],
     venue: "Under review at ACIIDS 2027",
     venueShort: "Under review · ACIIDS 2027",
     year: 2026,
     status: "under-review",
+    pdf: "/papers/Disentangling_Debiasing_from_Abstention_in_Bias_Steering_Transfer_to_Quantized_Language_Models.pdf",
   },
   {
     id: "mllm-lulc",
