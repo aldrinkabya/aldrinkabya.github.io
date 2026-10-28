@@ -17,6 +17,8 @@ export interface ProfileLink {
 
 export interface Profile {
   name: string;
+  /** The large name at the top of the page. Titles and metadata keep `name`. */
+  displayName: string;
   /** One line under the name. */
   tagline: string;
   /** Search-result and link-preview text, about 150 characters. */

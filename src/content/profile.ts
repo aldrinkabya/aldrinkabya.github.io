@@ -13,24 +13,25 @@ export const supervisors = {
 
 export const profile: Profile = {
   name: "Aldrin Kabya Biswas",
-  tagline: "ML researcher working on efficient and fair language models",
+  displayName: "Aldrin Kabya",
+  tagline: "ML researcher working on fair and efficient language models",
   description:
-    "ML researcher at CCDS, IUB, working on parameter-efficient fine-tuning, bias steering in quantized LLMs and vision-language alignment.",
+    "ML researcher at CCDS, IUB, working on bias steering in quantized LLMs, parameter-efficient fine-tuning and vision-language alignment.",
   bio: [
     [
       "I am a Research Assistant at the ",
       { text: "Center for Computational & Data Sciences (CCDS)", href: "https://ccds.ai" },
-      ", Independent University, Bangladesh (IUB), where I am supervised by ",
+      ", Independent University, Bangladesh (IUB), where I work with Prof. ",
       { text: supervisors.ali.name, href: supervisors.ali.href },
-      " and ",
+      " and Prof. ",
       { text: supervisors.rahman.name, href: supervisors.rahman.href },
       ".",
     ],
     [
-      "My research asks how to adapt language models cheaply and use them fairly: which layers are worth fine-tuning, chosen before training starts, and whether debiasing steering vectors still work once a model is quantized. I also work on vision-language alignment for land-cover segmentation in remote sensing.",
+      "I work on making language models fairer and more efficient. I am interested in understanding how these models behave internally and how to make them reliable and fair in real-world use. I have also worked on vision-language models for remote sensing.",
     ],
     [
-      "I graduated from IUB in 2025 with a B.Sc. in Computer Science & Engineering (CGPA 3.88/4.00, top 1% in CSE).",
+      "I graduated from Independent University, Bangladesh in 2025 with a B.Sc. in Computer Science & Engineering.",
     ],
   ],
   email: "aldrin.kabya04@gmail.com",

@@ -43,7 +43,7 @@ export function Hero() {
           )}
 
           <h1 className="font-serif text-[2.5rem] font-medium leading-[1.05] tracking-tight sm:text-[3.25rem]">
-            {profile.name}
+            {profile.displayName}
           </h1>
           <p className="mt-3 text-balance text-lg text-muted sm:text-xl">{profile.tagline}</p>
 
