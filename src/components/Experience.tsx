@@ -32,13 +32,6 @@ export function Experience() {
               )}
               <span className="text-subtle"> · {job.place}</span>
             </p>
-            <ul className="mt-3 space-y-2">
-              {job.bullets.map((b) => (
-                <li key={b} className="relative pl-4 leading-relaxed before:absolute before:left-0 before:top-[0.7em] before:size-1 before:rounded-full before:bg-subtle">
-                  {b}
-                </li>
-              ))}
-            </ul>
           </li>
         ))}
       </ol>

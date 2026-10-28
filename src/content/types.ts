@@ -87,7 +87,6 @@ export interface Experience {
   start: YearMonth;
   /** Absent while the role is current. */
   end?: YearMonth;
-  bullets: string[];
 }
 
 export interface Education {
