@@ -97,6 +97,10 @@ export const publications: Publication[] = [
     venueShort: "Under review",
     year: 2026,
     status: "under-review",
+    // Drawn for the site, not taken from the paper, which has no public copy.
+    thumbnail: "/images/papers/mllm-lulc.webp",
+    thumbnailAlt:
+      "Method sketch: a multimodal LLM draws class boxes on a satellite image, image patches take the class of their box, and CLIP image and text encoders are trained to align patches with class descriptions.",
   },
 ];
 
