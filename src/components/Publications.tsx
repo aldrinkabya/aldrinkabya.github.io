@@ -25,7 +25,8 @@ function linksFor(p: Publication): PaperLink[] {
   return links;
 }
 
-function PublishedCard({ p }: { p: Publication }) {
+/** Published papers, and papers under review that have a public PDF and a thumbnail. */
+function PaperCard({ p }: { p: Publication }) {
   return (
     <li
       id={p.id}
@@ -93,6 +94,8 @@ function GroupLabel({ children }: { children: React.ReactNode }) {
 export function Publications() {
   const published = publications.filter((p) => p.status === "published");
   const review = publications.filter((p) => p.status === "under-review");
+  const reviewCards = review.filter((p) => p.thumbnail);
+  const reviewItems = review.filter((p) => !p.thumbnail);
 
   return (
     <Section id="publications" title="Publications">
@@ -100,19 +103,30 @@ export function Publications() {
         <GroupLabel>Journal and conference papers</GroupLabel>
         <ul className="grid gap-4">
           {published.map((p) => (
-            <PublishedCard key={p.id} p={p} />
+            <PaperCard key={p.id} p={p} />
           ))}
         </ul>
       </div>
 
       {review.length > 0 && (
         <div className="mt-10">
-          <GroupLabel>Under review</GroupLabel>
-          <ul className="grid gap-5">
-            {review.map((p) => (
-              <UnderReviewItem key={p.id} p={p} />
-            ))}
-          </ul>
+          <div className="lg:-mx-6">
+            <GroupLabel>Under review</GroupLabel>
+            {reviewCards.length > 0 && (
+              <ul className="grid gap-4">
+                {reviewCards.map((p) => (
+                  <PaperCard key={p.id} p={p} />
+                ))}
+              </ul>
+            )}
+          </div>
+          {reviewItems.length > 0 && (
+            <ul className={`grid gap-5 ${reviewCards.length > 0 ? "mt-6" : ""}`}>
+              {reviewItems.map((p) => (
+                <UnderReviewItem key={p.id} p={p} />
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </Section>
