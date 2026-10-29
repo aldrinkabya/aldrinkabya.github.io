@@ -59,9 +59,13 @@ export function Talks() {
                   className="aspect-video w-full rounded-lg border border-border bg-white object-cover"
                 />
                 <div className="min-w-0">
-                  <time dateTime={p.date} className="font-mono text-[0.8125rem] tabular-nums text-subtle">
-                    {formatDate(p.date)}
-                  </time>
+                  <p className="text-[0.8125rem] text-subtle">
+                    <time dateTime={p.date} className="font-mono tabular-nums">
+                      {formatDate(p.date)}
+                    </time>
+                    <span aria-hidden="true" className="hidden sm:inline"> · </span>
+                    <span className="block sm:inline">{p.event}</span>
+                  </p>
                   <p className="mt-1 font-serif text-[1rem] font-medium leading-snug tracking-tight group-hover:text-accent sm:text-[1.1875rem]">
                     {p.title}
                   </p>

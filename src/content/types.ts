@@ -131,6 +131,8 @@ export interface Presentation {
   title: string;
   /** The day it was presented. */
   date: IsoDate;
+  /** Where it was presented, shown beside the date. */
+  event: string;
   /** Path under public/ to the slides PDF. */
   slides: string;
   /** Path under public/, the title slide as 800x450 WebP. */
