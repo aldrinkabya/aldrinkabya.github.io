@@ -28,7 +28,7 @@ export const profile: Profile = {
       ".",
     ],
     [
-      "I work on making language models fairer and more efficient. I am interested in understanding how these models behave internally and how to make them reliable and fair in real-world use. I have also worked on vision-language models for remote sensing.",
+      "My current work focuses on making language models fairer and more efficient. I am interested in understanding how these models behave internally and how to make them reliable and fair in real-world use. I have also worked on vision-language models for remote sensing.",
     ],
     [
       "I graduated from Independent University, Bangladesh in 2025 with a B.Sc. in Computer Science & Engineering.",
