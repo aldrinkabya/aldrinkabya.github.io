@@ -1,5 +1,3 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { profile } from "@/content/profile";
 import { research } from "@/content/research";
@@ -26,10 +24,6 @@ async function googleFont(family: string, weight: number, text?: string) {
 
 export async function GET() {
   const topics = research.map((r) => r.title).join(" · ");
-
-  // The site's logo, the same file as the favicon.
-  const logo = await readFile(join(process.cwd(), "src/app/icon.svg"));
-  const logoSrc = `data:image/svg+xml;base64,${logo.toString("base64")}`;
 
   const [serif, sans, sansBold] = await Promise.all([
     googleFont("Newsreader", 500, profile.name),
@@ -58,11 +52,7 @@ export async function GET() {
           borderTop: "14px solid #1b5c8a",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element -- rendered by ImageResponse, not the page */}
-          <img src={logoSrc} width={92} height={92} alt="" />
-          <div style={{ fontSize: 26, color: "#716c64" }}>{new URL(siteUrl).host}</div>
-        </div>
+        <div style={{ display: "flex", fontSize: 26, color: "#716c64" }}>{new URL(siteUrl).host}</div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontFamily: "Newsreader", fontSize: 96, lineHeight: 1.05, letterSpacing: -2 }}>

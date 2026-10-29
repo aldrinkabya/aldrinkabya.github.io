@@ -28,7 +28,7 @@ export interface Profile {
   bio: RichText[];
   email: string;
   links: ProfileLink[];
-  /** Path under public/, a square WebP (about 720px). Without one, the logo shows. */
+  /** Path under public/, a square WebP (about 720px). Without one, the hero has no picture. */
   photo?: string;
   location: string;
   /** Current role, used in structured data. */

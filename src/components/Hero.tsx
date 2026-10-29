@@ -4,25 +4,18 @@ import { RichText, isExternal } from "./RichText";
 
 function Portrait() {
   // 224px is the most the 720px column allows with the name still on one line.
-  const box = "size-36 shrink-0 rounded-2xl sm:size-48 md:size-56";
-  if (profile.photo) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element -- static export: images are pre-sized by hand
-      <img
-        src={profile.photo}
-        alt={`Portrait of ${profile.name}`}
-        width={720}
-        height={720}
-        fetchPriority="high"
-        className={`${box} border border-border object-cover shadow-card`}
-      />
-    );
-  }
-  // The logo stands in for a photo on wider screens only: on a phone it
-  // would push the name and bio below the fold.
+  if (!profile.photo) return null;
+  // 224px (md:size-56) is the most the 720px column allows with the name still on one line.
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- static export: an SVG needs no resizing
-    <img src="/icon.svg" alt="" width={64} height={64} className={`${box} hidden shadow-card sm:block`} />
+    // eslint-disable-next-line @next/next/no-img-element -- static export: images are pre-sized by hand
+    <img
+      src={profile.photo}
+      alt={`Portrait of ${profile.name}`}
+      width={720}
+      height={720}
+      fetchPriority="high"
+      className="size-36 shrink-0 rounded-2xl border border-border object-cover shadow-card sm:size-48 md:size-56"
+    />
   );
 }
 
