@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { sections, type SectionId } from "@/lib/site";
+import { navSections, sections, type SectionId } from "@/lib/site";
 import { ThemeToggle } from "./ThemeToggle";
 import { CloseIcon, FileIcon, MenuIcon } from "./Icons";
 
@@ -63,7 +63,7 @@ export function Nav({ name, cvHref }: { name: string; cvHref: string }) {
         </a>
 
         <ul className="hidden items-center lg:flex">
-          {sections.slice(1).map((s) => (
+          {navSections.slice(1).map((s) => (
             <li key={s.id}>
               <a href={`#${s.id}`} className={linkClass(s.id)} aria-current={active === s.id ? "true" : undefined}>
                 {s.label}
@@ -95,7 +95,7 @@ export function Nav({ name, cvHref }: { name: string; cvHref: string }) {
             <span className="sr-only">Sections menu</span>
           </summary>
           <ul className="absolute right-0 top-11 w-52 rounded-xl border border-border bg-surface p-1.5 shadow-card">
-            {sections.map((s) => (
+            {navSections.map((s) => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}

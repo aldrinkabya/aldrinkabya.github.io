@@ -14,3 +14,6 @@ export const sections = [
 ] as const;
 
 export type SectionId = (typeof sections)[number]["id"];
+
+/** The sections linked from the nav. News sits right under the hero, so it needs no link. */
+export const navSections = sections.filter((s) => s.id !== "news");
