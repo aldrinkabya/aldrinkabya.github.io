@@ -97,19 +97,12 @@ export function Publications() {
   const reviewCards = review.filter((p) => p.thumbnail);
   const reviewItems = review.filter((p) => !p.thumbnail);
 
+  // Under review comes first: it is the newest work, and the bias-steering
+  // paper is the one closest to the applications.
   return (
     <Section id="publications" title="Publications">
-      <div className="lg:-mx-6">
-        <GroupLabel>Journal and conference papers</GroupLabel>
-        <ul className="grid gap-4">
-          {published.map((p) => (
-            <PaperCard key={p.id} p={p} />
-          ))}
-        </ul>
-      </div>
-
       {review.length > 0 && (
-        <div className="mt-10">
+        <div className="mb-10">
           <div className="lg:-mx-6">
             <GroupLabel>Under review</GroupLabel>
             {reviewCards.length > 0 && (
@@ -129,6 +122,15 @@ export function Publications() {
           )}
         </div>
       )}
+
+      <div className="lg:-mx-6">
+        <GroupLabel>Journal and conference papers</GroupLabel>
+        <ul className="grid gap-4">
+          {published.map((p) => (
+            <PaperCard key={p.id} p={p} />
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }
