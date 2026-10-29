@@ -5,7 +5,7 @@ import { News } from "@/components/News";
 import { Projects } from "@/components/Projects";
 import { Publications } from "@/components/Publications";
 import { Research } from "@/components/Research";
-import { Presentations } from "@/components/Presentations";
+import { Schools } from "@/components/Schools";
 import { Talks } from "@/components/Talks";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
       <Projects />
       <Education />
       <Talks />
-      <Presentations />
+      <Schools />
     </>
   );
 }

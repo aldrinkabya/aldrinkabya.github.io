@@ -1,4 +1,4 @@
-import type { YearMonth } from "@/content/types";
+import type { IsoDate, YearMonth } from "@/content/types";
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -12,6 +12,12 @@ export function formatYearMonth(date: YearMonth): string {
 export function isoYearMonth(date: YearMonth): string {
   const [year, month] = date.split("-");
   return month ? `${year}-${month.padStart(2, "0")}` : year;
+}
+
+/** "2026-09-14" -> "Sep 14, 2026". */
+export function formatDate(date: IsoDate): string {
+  const [year, month, day] = date.split("-");
+  return `${months[Number(month) - 1]} ${Number(day)}, ${year}`;
 }
 
 /** Build date, e.g. "October 2026". Fixed at build time in a static export. */

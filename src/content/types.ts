@@ -123,9 +123,14 @@ export interface Project {
   tags: string[];
 }
 
+/** "2026-09-14". */
+export type IsoDate = `${number}-${number}-${number}`;
+
 export interface Presentation {
   /** The paper's own title. */
   title: string;
+  /** The day it was presented. */
+  date: IsoDate;
   /** Path under public/ to the slides PDF. */
   slides: string;
   /** Path under public/, the title slide as 800x450 WebP. */
