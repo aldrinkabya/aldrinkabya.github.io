@@ -7,7 +7,9 @@ export const news: NewsItem[] = [
   {
     date: "2026-10",
     text: [
-      "Submitted our paper on bias-steering transfer to quantized language models to ACIIDS 2027.",
+      "Submitted our paper on ",
+      { text: "bias-steering transfer to quantized language models", href: "#bias-steering-quant" },
+      ".",
     ],
   },
   {
