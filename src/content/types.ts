@@ -131,7 +131,7 @@ export interface Presentation {
   title: string;
   /** The day it was presented. */
   date: IsoDate;
-  /** Where it was presented, shown beside the date. */
+  /** Where it was presented, shown under the title as "Presented at ...". */
   event: string;
   /** Path under public/ to the slides PDF. */
   slides: string;

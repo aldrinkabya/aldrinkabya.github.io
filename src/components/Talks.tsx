@@ -2,6 +2,7 @@ import { presentations } from "@/content/presentations";
 import { talks } from "@/content/talks";
 import type { Talk } from "@/content/types";
 import { formatDate } from "@/lib/format";
+import { ArrowUpRightIcon } from "./Icons";
 import { Section } from "./Section";
 
 export const kindLabel: Record<Talk["kind"], string> = {
@@ -48,27 +49,33 @@ export function Talks() {
                 rel="noopener noreferrer"
                 className="group grid grid-cols-[8rem_1fr] items-center gap-4 rounded-2xl border border-border bg-surface p-3 transition-all duration-200 hover:shadow-card motion-safe:hover:-translate-y-0.5 sm:grid-cols-[13rem_1fr] sm:gap-6 sm:p-4"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element -- static export: pre-sized WebP */}
-                <img
-                  src={p.thumbnail}
-                  alt=""
-                  width={800}
-                  height={450}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-video w-full rounded-lg border border-border bg-white object-cover"
-                />
+                <div className="relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- static export: pre-sized WebP */}
+                  <img
+                    src={p.thumbnail}
+                    alt=""
+                    width={800}
+                    height={450}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-video w-full rounded-lg border border-border bg-white object-cover"
+                  />
+                  {/* Marks the preview as a link to the slides. */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-1.5 right-1.5 grid size-6 place-items-center rounded-full bg-fg/80 text-bg shadow-sm transition-colors group-hover:bg-accent sm:bottom-2 sm:right-2 sm:size-7"
+                  >
+                    <ArrowUpRightIcon className="size-3.5 sm:size-4" />
+                  </span>
+                </div>
                 <div className="min-w-0">
-                  <p className="text-[0.8125rem] text-subtle">
-                    <time dateTime={p.date} className="font-mono tabular-nums">
-                      {formatDate(p.date)}
-                    </time>
-                    <span aria-hidden="true" className="hidden sm:inline"> · </span>
-                    <span className="block sm:inline">{p.event}</span>
-                  </p>
+                  <time dateTime={p.date} className="font-mono text-[0.8125rem] tabular-nums text-subtle">
+                    {formatDate(p.date)}
+                  </time>
                   <p className="mt-1 font-serif text-[1rem] font-medium leading-snug tracking-tight group-hover:text-accent sm:text-[1.1875rem]">
                     {p.title}
                   </p>
+                  <p className="mt-1.5 text-sm text-muted">Presented at {p.event}</p>
                 </div>
               </a>
             </li>
