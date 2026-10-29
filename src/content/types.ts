@@ -122,3 +122,12 @@ export interface Project {
   href?: string;
   tags: string[];
 }
+
+export interface Presentation {
+  /** The paper's own title. */
+  title: string;
+  /** Path under public/ to the slides PDF. */
+  slides: string;
+  /** Path under public/, the title slide as 800x450 WebP. */
+  thumbnail: string;
+}

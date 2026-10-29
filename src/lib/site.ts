@@ -11,9 +11,10 @@ export const sections = [
   { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
   { id: "talks", label: "Talks" },
+  { id: "presentations", label: "Presentations" },
 ] as const;
 
 export type SectionId = (typeof sections)[number]["id"];
 
-/** The sections linked from the nav. News sits right under the hero, so it needs no link. */
-export const navSections = sections.filter((s) => s.id !== "news");
+/** The sections linked from the nav. News sits right under the hero, so it needs no link; Paper Presentations is left out to keep the nav short. */
+export const navSections = sections.filter((s) => s.id !== "news" && s.id !== "presentations");
