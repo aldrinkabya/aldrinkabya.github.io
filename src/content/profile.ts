@@ -46,7 +46,6 @@ export const profile: Profile = {
     { kind: "github", label: "GitHub", href: "https://github.com/aldrinkabya" },
   ],
   photo: "/images/profile.webp",
-  monogram: "AKB",
   location: "Dhaka, Bangladesh",
   jobTitle: "Research Assistant",
   affiliation: {

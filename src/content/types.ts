@@ -28,9 +28,8 @@ export interface Profile {
   bio: RichText[];
   email: string;
   links: ProfileLink[];
-  /** Path under public/, a square WebP (about 720px). Without one, a monogram shows. */
+  /** Path under public/, a square WebP (about 720px). Without one, the logo shows. */
   photo?: string;
-  monogram: string;
   location: string;
   /** Current role, used in structured data. */
   jobTitle: string;

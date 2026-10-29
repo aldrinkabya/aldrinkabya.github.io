@@ -18,15 +18,11 @@ function Portrait() {
       />
     );
   }
-  // The monogram stands in for a photo on wider screens only: on a phone it
+  // The logo stands in for a photo on wider screens only: on a phone it
   // would push the name and bio below the fold.
   return (
-    <div
-      aria-hidden="true"
-      className={`${box} hidden items-center justify-center border border-border bg-accent-soft font-serif text-4xl font-medium tracking-tight text-accent shadow-card sm:flex sm:text-5xl`}
-    >
-      {profile.monogram}
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element -- static export: an SVG needs no resizing
+    <img src="/icon.svg" alt="" width={64} height={64} className={`${box} hidden shadow-card sm:block`} />
   );
 }
 

@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { profile } from "@/content/profile";
 import { research } from "@/content/research";
@@ -25,8 +27,12 @@ async function googleFont(family: string, weight: number, text?: string) {
 export async function GET() {
   const topics = research.map((r) => r.title).join(" · ");
 
+  // The site's logo, the same file as the favicon.
+  const logo = await readFile(join(process.cwd(), "src/app/icon.svg"));
+  const logoSrc = `data:image/svg+xml;base64,${logo.toString("base64")}`;
+
   const [serif, sans, sansBold] = await Promise.all([
-    googleFont("Newsreader", 500, profile.name + profile.monogram),
+    googleFont("Newsreader", 500, profile.name),
     googleFont("Geist", 400),
     googleFont("Geist", 600),
   ]);
@@ -53,23 +59,8 @@ export async function GET() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div
-            style={{
-              width: 92,
-              height: 92,
-              borderRadius: 22,
-              background: "#e8f0f6",
-              border: "2px solid #d5e3ee",
-              color: "#1b5c8a",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "Newsreader",
-              fontSize: 38,
-            }}
-          >
-            {profile.monogram}
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element -- rendered by ImageResponse, not the page */}
+          <img src={logoSrc} width={92} height={92} alt="" />
           <div style={{ fontSize: 26, color: "#716c64" }}>{new URL(siteUrl).host}</div>
         </div>
 
