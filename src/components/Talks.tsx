@@ -60,10 +60,10 @@ export function Talks() {
                     decoding="async"
                     className="aspect-video w-full rounded-lg border border-border bg-white object-cover"
                   />
-                  {/* Marks the preview as a link to the slides. White in both themes, like the slide behind it. */}
+                  {/* Marks the preview as a link to the slides. Translucent black in both themes, so it shows on the white slide. */}
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-1.5 right-1.5 grid size-6 place-items-center rounded-md border border-black/15 bg-white text-neutral-800 shadow-sm transition-colors group-hover:text-accent sm:bottom-2 sm:right-2"
+                    className="absolute bottom-1.5 right-1.5 grid size-6 place-items-center rounded-md bg-black/50 text-white transition-colors group-hover:bg-black/70 sm:bottom-2 sm:right-2"
                   >
                     <ArrowUpRightIcon className="size-3.5" />
                   </span>
