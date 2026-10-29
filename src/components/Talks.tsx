@@ -63,19 +63,19 @@ export function Talks() {
                   {/* Marks the preview as a link to the slides. */}
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-1.5 right-1.5 grid size-6 place-items-center rounded-full bg-fg/80 text-bg shadow-sm transition-colors group-hover:bg-accent sm:bottom-2 sm:right-2 sm:size-7"
+                    className="absolute bottom-1 right-1 grid size-5 place-items-center rounded-md border border-border bg-bg/85 text-subtle transition-colors group-hover:text-accent sm:bottom-1.5 sm:right-1.5"
                   >
-                    <ArrowUpRightIcon className="size-3.5 sm:size-4" />
+                    <ArrowUpRightIcon className="size-3" />
                   </span>
                 </div>
                 <div className="min-w-0">
-                  <time dateTime={p.date} className="font-mono text-[0.8125rem] tabular-nums text-subtle">
-                    {formatDate(p.date)}
-                  </time>
-                  <p className="mt-1 font-serif text-[1rem] font-medium leading-snug tracking-tight group-hover:text-accent sm:text-[1.1875rem]">
+                  <p className="font-serif text-[1rem] font-medium leading-snug tracking-tight group-hover:text-accent sm:text-[1.1875rem]">
                     {p.title}
                   </p>
-                  <p className="mt-1.5 text-sm text-muted">Presented at {p.event}</p>
+                  <time dateTime={p.date} className="mt-2 block font-mono text-[0.8125rem] tabular-nums text-subtle">
+                    {formatDate(p.date)}
+                  </time>
+                  <p className="mt-0.5 text-sm text-muted">Presented at {p.event}</p>
                 </div>
               </a>
             </li>
