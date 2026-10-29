@@ -23,9 +23,9 @@ export const news: NewsItem[] = [
   {
     date: "2026-02",
     text: [
-      "Our paper on training-free layer selection was accepted in ",
-      { text: "Information Sciences", href: "#insci-2026" },
-      ".",
+      "Our paper on ",
+      { text: "training-free layer selection", href: "#insci-2026" },
+      " was accepted in Information Sciences (Elsevier).",
     ],
   },
   {
