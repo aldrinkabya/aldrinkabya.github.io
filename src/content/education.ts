@@ -12,11 +12,4 @@ export const education: Education = {
   cgpaNote: "top 1% in CSE; Magna Cum Laude",
   thesis: "Training-Free Layer Selection for Parameter-Efficient Fine-Tuning of Language Models",
   supervisors: [supervisors.ali, supervisors.rahman],
-  coursework: [
-    "Machine Learning",
-    "Artificial Intelligence",
-    "Linear Algebra",
-    "Numerical Methods",
-    "Ordinary Differential Equations",
-  ],
 };

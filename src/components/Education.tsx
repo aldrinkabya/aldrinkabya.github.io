@@ -47,8 +47,6 @@ export function Education() {
               </span>
             ))}
           </dd>
-          <dt className="text-subtle">Coursework</dt>
-          <dd className="text-muted">{e.coursework.join(", ")}</dd>
         </dl>
       </div>
 

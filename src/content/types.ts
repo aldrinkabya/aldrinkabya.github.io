@@ -99,7 +99,6 @@ export interface Education {
   cgpaNote: string;
   thesis: string;
   supervisors: { name: string; href?: string }[];
-  coursework: string[];
 }
 
 export interface Honor {
