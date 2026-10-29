@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: "Land-use and land-cover WebGIS for Bangladesh",
     summary:
-      "A full-stack web platform for exploring nationwide land-use and land-cover maps of Bangladesh. I built the platform: the tile server, the map interface and the analysis tools. The maps themselves come from separate segmentation models.",
+      "A full-stack web platform for exploring nationwide land-use and land-cover maps of Bangladesh. I built its tile server, map interface and analysis tools; the maps themselves come from separate segmentation models.",
     bullets: [
       "2019 and 2023 land-cover and brickfield maps served as Cloud-Optimized GeoTIFF tiles.",
       "Pixel-level change detection between years, with swipe comparison.",
