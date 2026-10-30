@@ -1,4 +1,4 @@
-import { doiUrl, publications } from "@/content/publications";
+import { paperUrl, publications } from "@/content/publications";
 import type { Author, Publication } from "@/content/types";
 import { PaperLinks, type PaperLink } from "./PaperLinks";
 import { Section } from "./Section";
@@ -19,7 +19,8 @@ function Authors({ authors }: { authors: Author[] }) {
 function linksFor(p: Publication): PaperLink[] {
   const links: PaperLink[] = [];
   if (p.pdf) links.push({ label: "PDF", href: p.pdf });
-  if (p.doi) links.push({ label: p.pdf ? "DOI" : "Paper", href: doiUrl(p.doi) });
+  const href = paperUrl(p);
+  if (href) links.push({ label: p.pdf && !p.url ? "DOI" : "Paper", href });
   if (p.code) links.push({ label: "Code", href: p.code });
   if (p.poster) links.push({ label: "Poster", href: p.poster });
   return links;
@@ -59,8 +60,8 @@ function PaperCard({ p }: { p: Publication }) {
           )}
         </div>
         <h4 className="mt-2.5 font-serif text-[1.1875rem] font-medium leading-snug tracking-tight">
-          {p.doi ? (
-            <a href={doiUrl(p.doi)} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+          {paperUrl(p) ? (
+            <a href={paperUrl(p)} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
               {p.title}
             </a>
           ) : (

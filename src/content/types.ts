@@ -66,6 +66,8 @@ export interface Publication {
   year: number;
   status: "published" | "under-review";
   doi?: string;
+  /** The paper's landing page, linked instead of the DOI. */
+  url?: string;
   /** A direct link to the paper, when it differs from the DOI. */
   pdf?: string;
   code?: string;

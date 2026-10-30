@@ -49,7 +49,7 @@ export const publications: Publication[] = [
     venueShort: "LREC 2026",
     year: 2026,
     status: "published",
-    doi: "10.63317/3eyz8rr5qun6",
+    url: "https://aclanthology.org/2026.lrec-1.810/",
     thumbnail: "/images/papers/prism-lrec.webp",
     thumbnailAlt:
       "PRiSM overview: a selection stage scores each layer of a frozen model, then a fine-tuning stage trains only the selected layers.",
@@ -105,3 +105,5 @@ export const publications: Publication[] = [
 ];
 
 export const doiUrl = (doi: string) => `https://doi.org/${doi}`;
+
+export const paperUrl = (p: Publication) => p.url ?? (p.doi ? doiUrl(p.doi) : undefined);
