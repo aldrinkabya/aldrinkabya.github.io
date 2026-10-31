@@ -1,6 +1,5 @@
 import { projects } from "@/content/projects";
-import { ArrowUpRightIcon } from "./Icons";
-import { PaperLinks } from "./PaperLinks";
+import { ArrowUpRightIcon, GitHubIcon } from "./Icons";
 import { Section } from "./Section";
 
 export function Projects() {
@@ -22,16 +21,29 @@ export function Projects() {
               />
             )}
             <div className="p-5 sm:p-6">
-              <h3 className="font-serif text-xl font-medium tracking-tight">
-                {p.href ? (
-                  <a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-accent">
-                    {p.title}
-                    <ArrowUpRightIcon className="size-4" />
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <h3 className="font-serif text-xl font-medium tracking-tight">
+                  {p.href ? (
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-accent">
+                      {p.title}
+                      <ArrowUpRightIcon className="size-4" />
+                    </a>
+                  ) : (
+                    p.title
+                  )}
+                </h3>
+                {p.code && (
+                  <a
+                    href={p.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 text-[0.8125rem] font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+                  >
+                    <GitHubIcon className="size-3.5" />
+                    GitHub
                   </a>
-                ) : (
-                  p.title
                 )}
-              </h3>
+              </div>
               <p className="mt-2 leading-relaxed text-muted">{p.summary}</p>
               {p.bullets && (
                 <ul className="mt-3 space-y-1.5">
@@ -48,9 +60,7 @@ export function Projects() {
                     {t}
                   </li>
                 ))}
-              </ul>
-              {p.code && <PaperLinks links={[{ label: "Code", href: p.code }]} />}
-            </div>
+              </ul>            </div>
           </li>
         ))}
       </ul>
