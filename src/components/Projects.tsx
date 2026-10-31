@@ -1,5 +1,6 @@
 import { projects } from "@/content/projects";
 import { ArrowUpRightIcon } from "./Icons";
+import { PaperLinks } from "./PaperLinks";
 import { Section } from "./Section";
 
 export function Projects() {
@@ -48,6 +49,7 @@ export function Projects() {
                   </li>
                 ))}
               </ul>
+              {p.code && <PaperLinks links={[{ label: "Code", href: p.code }]} />}
             </div>
           </li>
         ))}

@@ -121,7 +121,10 @@ export interface Project {
   bullets?: string[];
   image?: string;
   imageAlt?: string;
+  /** A live site: the title links here. */
   href?: string;
+  /** Source code: a "Code" button, so the title is not mistaken for a live site. */
+  code?: string;
   tags: string[];
 }
 
