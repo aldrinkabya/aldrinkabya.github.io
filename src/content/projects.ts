@@ -3,6 +3,7 @@ import type { Project } from "./types";
 export const projects: Project[] = [
   {
     title: "Land-use and land-cover WebGIS for Bangladesh",
+    href: "https://github.com/aldrinkabya/lulc-webgis",
     summary:
       "A full-stack web platform for exploring nationwide land-use and land-cover maps of Bangladesh. I built the tile server, map interface and analysis tools; the maps themselves come from separate segmentation models.",
     bullets: [
