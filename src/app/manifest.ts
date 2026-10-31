@@ -3,7 +3,7 @@ import { profile } from "@/content/profile";
 
 export const dynamic = "force-static";
 
-// Icons rendered from icon.svg, for "Add to home screen" on Android.
+// Icons for "Add to home screen" on Android.
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: profile.name,
