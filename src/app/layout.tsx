@@ -37,7 +37,9 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: profile.name, description, images: [ogImage] },
   appleWebApp: { title: "Aldrin", capable: false },
   // Google Search Console ownership check; keep it, or the property loses verification.
-  verification: { google: "k_WKZ_2XasqrqsmqNyW-_vFJznD--3_1DI8Nv5IuyC4" },
+  verification: {
+    google: ["k_WKZ_2XasqrqsmqNyW-_vFJznD--3_1DI8Nv5IuyC4", "Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I"],
+  },
 };
 
 export const viewport: Viewport = {
