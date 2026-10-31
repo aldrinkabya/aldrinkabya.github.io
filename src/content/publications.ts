@@ -80,7 +80,7 @@ export const publications: Publication[] = [
     status: "under-review",
     thumbnail: "/images/papers/bias-steering-quant.webp",
     thumbnailAlt:
-      "Overview of the study: a steering vector is extracted on the FP16 model, the model is quantized to 8 down to 2 bits, the vector is added at one layer, and answers are evaluated on BBQ.",
+      "Part of the study overview: abstention (ABS) and counter-stereotype (CS) vectors are extracted on the FP16 model, the model is quantized to 8 down to 2 bits, and either the transferred FP16 vector or a re-extracted one is added at layer L.",
     pdf: "/papers/Disentangling_Debiasing_from_Abstention_in_Bias_Steering_Transfer_to_Quantized_Language_Models.pdf",
   },
   {
