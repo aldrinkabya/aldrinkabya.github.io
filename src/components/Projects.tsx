@@ -21,7 +21,8 @@ export function Projects() {
               />
             )}
             <div className="p-5 sm:p-6">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              {/* Baseline: "GitHub" sits on the title's text line, not the centre of its line box. */}
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
                 <h3 className="font-serif text-xl font-medium tracking-tight">
                   {p.href ? (
                     <a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-accent">
@@ -39,8 +40,8 @@ export function Projects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 text-[0.8125rem] font-medium text-fg transition-colors hover:border-accent hover:text-accent"
                   >
-                    <GitHubIcon className="size-3.5" />
-                    GitHub
+                    <GitHubIcon className="size-3.5 self-center" />
+                    <span className="self-baseline">GitHub</span>
                   </a>
                 )}
               </div>
