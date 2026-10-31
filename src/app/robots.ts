@@ -5,7 +5,8 @@ export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
+    // No PDF (CV, paper, slides) in search results (user, 2026-10-31); they stay linked on the page.
+    rules: { userAgent: "*", allow: "/", disallow: "/*.pdf$" },
     sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
