@@ -21,30 +21,24 @@ export function Projects() {
               />
             )}
             <div className="p-5 sm:p-6">
-              {/* Baseline: "GitHub" sits on the title's text line, not the centre of its line box. */}
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                <h3 className="font-serif text-xl font-medium tracking-tight">
-                  {p.href ? (
-                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-accent">
-                      {p.title}
-                      <ArrowUpRightIcon className="size-4" />
-                    </a>
-                  ) : (
-                    p.title
-                  )}
-                </h3>
-                {p.code && (
-                  <a
-                    href={p.code}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 text-[0.8125rem] font-medium text-fg transition-colors hover:border-accent hover:text-accent"
-                  >
-                    <GitHubIcon className="size-3.5 self-center" />
-                    <span className="self-baseline">GitHub</span>
+              <h3 className="font-serif text-xl font-medium tracking-tight">
+                {p.href || p.code ? (
+                  // Inline, so the icon follows the last word when the title wraps.
+                  <a href={p.href ?? p.code} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                    {p.title}
+                    {p.href ? (
+                      <ArrowUpRightIcon className="ml-1 inline size-4 align-[-0.125em]" />
+                    ) : (
+                      <>
+                        <GitHubIcon className="ml-1.5 inline size-4 align-[-0.125em]" />
+                        <span className="sr-only"> (GitHub repository)</span>
+                      </>
+                    )}
                   </a>
+                ) : (
+                  p.title
                 )}
-              </div>
+              </h3>
               <p className="mt-2 leading-relaxed text-muted">{p.summary}</p>
               {p.bullets && (
                 <ul className="mt-3 space-y-1.5">

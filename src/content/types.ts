@@ -123,7 +123,7 @@ export interface Project {
   imageAlt?: string;
   /** A live site: the title links here. */
   href?: string;
-  /** Source code: a "GitHub" button beside the title, so the title is not mistaken for a live site. */
+  /** Source code: without `href`, the title links here with a GitHub icon instead of the arrow. */
   code?: string;
   tags: string[];
 }
