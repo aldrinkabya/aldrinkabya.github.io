@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
   twitter: { card: "summary_large_image", title: profile.name, description, images: [ogImage] },
+  appleWebApp: { title: "Aldrin", capable: false },
 };
 
 export const viewport: Viewport = {
