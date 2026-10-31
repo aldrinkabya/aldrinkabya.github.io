@@ -29,10 +29,12 @@ export function Projects() {
                     {p.href ? (
                       <ArrowUpRightIcon className="ml-1 inline size-4 align-[-0.125em]" />
                     ) : (
-                      <>
+                      // Accent colour and the arrow mark it as a link without an underline.
+                      <span className="text-accent">
                         <GitHubIcon className="ml-1.5 inline size-4 align-[-0.125em]" />
+                        <ArrowUpRightIcon className="ml-px inline size-4 align-[-0.125em]" />
                         <span className="sr-only"> (GitHub repository)</span>
-                      </>
+                      </span>
                     )}
                   </a>
                 ) : (
