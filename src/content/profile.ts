@@ -14,12 +14,12 @@ export const supervisors = {
 export const profile: Profile = {
   name: "Aldrin Kabya Biswas",
   displayName: "Aldrin Kabya",
-  tagline: "ML researcher · Trustworthy AI · Efficient LLMs · Vision-Language Models",
+  tagline: "ML Researcher · Trustworthy AI · Efficient LLMs · Vision-Language Models",
   description:
     "ML researcher at CCDS, IUB, working on bias steering in quantized LLMs, parameter-efficient fine-tuning and vision-language alignment.",
   bio: [
     [
-      "I am a Research Assistant at the ",
+      "Hi, I'm Aldrin. I am a Research Assistant at the ",
       { text: "Center for Computational & Data Sciences (CCDS)", href: "https://ccds.ai" },
       ", Independent University, Bangladesh (IUB), where I work with Prof. ",
       { text: supervisors.ali.name, href: supervisors.ali.href },
