@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "/",
-    siteName: profile.name,
+    siteName: profile.displayName,
     title: profile.name,
     description,
     locale: "en_US",
@@ -49,8 +49,7 @@ export const viewport: Viewport = {
 
 // schema.org Person, so search engines can tie a name search to this page.
 const sameAs = profile.links.filter((l) => l.kind !== "email" && l.kind !== "cv").map((l) => l.href);
-const jsonLd = {
-  "@context": "https://schema.org",
+const person = {
   "@type": "Person",
   name: profile.name,
   url: siteUrl,
@@ -63,6 +62,9 @@ const jsonLd = {
   knowsAbout: profile.keywords,
   sameAs,
 };
+// Google's site name, shown above the result; without it, *.github.io sites show "GitHub".
+const website = { "@type": "WebSite", name: profile.displayName, url: `${siteUrl}/` };
+const jsonLd = { "@context": "https://schema.org", "@graph": [website, person] };
 
 // Scroll reveals ([data-reveal] in globals.css). Runs before first paint and
 // does not wait for React. Without JS the html.js class is never set, so
