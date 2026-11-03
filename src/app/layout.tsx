@@ -15,7 +15,7 @@ const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"
 
 const cv = profile.links.find((l) => l.kind === "cv")!.href;
 const { description } = profile;
-// The link preview is the photo alone: public/og.jpg, the hero's framing at 800px.
+// The link preview is the photo alone: public/og.jpg, 800px, a little closer than the hero.
 const ogImage = { url: "/og.jpg", width: 800, height: 800, type: "image/jpeg", alt: profile.name };
 
 export const metadata: Metadata = {
