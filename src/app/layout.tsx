@@ -15,8 +15,8 @@ const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"
 
 const cv = profile.links.find((l) => l.kind === "cv")!.href;
 const { description } = profile;
-// Rendered by src/app/og.png/route.tsx.
-const ogImage = { url: "/og.png", width: 1200, height: 630, alt: `${profile.name}: ${profile.tagline}` };
+// The link preview is the photo alone: public/og.jpg, the hero's framing at 800px.
+const ogImage = { url: "/og.jpg", width: 800, height: 800, type: "image/jpeg", alt: profile.name };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -34,7 +34,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [ogImage],
   },
-  twitter: { card: "summary_large_image", title: profile.name, description, images: [ogImage] },
+  // "summary": X shows a square image whole in the small card, and crops it in the large one.
+  twitter: { card: "summary", title: profile.name, description, images: [ogImage] },
   appleWebApp: { title: "Aldrin", capable: false },
   // Google Search Console ownership check; keep it, or the property loses verification.
   verification: { google: "9Q4HlI0_HTdgLf0hoJFLjRLRveheNCUIkZLDbWVHKTA" },
