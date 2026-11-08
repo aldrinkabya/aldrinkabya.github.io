@@ -14,7 +14,9 @@ export const supervisors = {
 export const profile: Profile = {
   name: "Aldrin Kabya Biswas",
   displayName: "Aldrin Kabya",
-  tagline: "ML Researcher · Trustworthy AI · Efficient LLMs · Vision-Language Models",
+  //   (no-break space) keeps each item on one line and each dot with the item before it
+  tagline:
+    "ML Researcher · Interpretability · Trustworthy AI · Efficient LLMs · Vision-Language Models",
   description:
     "ML researcher at CCDS, IUB, working on bias steering in quantized LLMs, parameter-efficient fine-tuning and vision-language alignment.",
   bio: [
